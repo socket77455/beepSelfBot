@@ -1,4 +1,4 @@
-﻿console.log(" ")
+console.log(" ")
 var d = function d() { return new Date(); }
 var bootstart = d()
 console.log("Loading...")
@@ -39,11 +39,11 @@ const successemoji = "✅"
 function botstartupmode() {
     try {
         if (config.loginmode === "normal") {
-            //var TOKEN = tokenpath.selfbottoken;
-            bot.login(process.env.topstoken)
+            var TOKEN = tokenpath.selfbottoken;
+            bot.login(TOKEN)
         } else if (config.loginmode === "test") {
-            //var TOKEN = tokenpath.selfbottesttoken;
-            bot.login(process.env.topstoken)
+            var TOKEN = tokenpath.selfbottesttoken;
+            bot.login(TOKEN)
         } else {
             console.log(LOGWARN + "Error logging in.")
             return;
@@ -56,7 +56,7 @@ function botstartupmode() {
 bot.on("ready", async function() {
     console.log(" ")
     console.log("*---------------------*")
-    console.log("Started beepSelfBot for " + bot.user.tag + " (" + config.status + ").")
+    console.log("Started myselfbot for " + bot.user.tag + " (" + config.status + ").")
     bot.user.setStatus(config.status).catch(err => {
         console.log("Error setting status from config. " + err)
     })
@@ -91,7 +91,7 @@ bot.on("message", async function(message) {
     if (message.author.id !== bot.user.id) {
         if (!message.author.bot) {
             if (message.channel.type !== "dm") {
-                if (message.guild.id === "231828052127121408" || "232550371191554051") {
+                if (message.guild.id === "546582388415660051" || "546582388415660051") {
                     if (message.mentions.members.size > 0) {
                         if (message.mentions.members.get(bot.user.id) != undefined) {
                             message.react(message.guild.emojis.find("name","notification"))
