@@ -22,7 +22,7 @@ bot.commands = new Discord.Collection();
 bot.alias = new Discord.Collection();
 bot.alias2 = new Discord.Collection();
 
-const tokenpath = require("../token.json")
+const tokenpath = require("./bin/token.json")
 const PREFIX = "/";
 
 var randomstring = arr => arr[Math.floor(Math.random() * arr.length)];
