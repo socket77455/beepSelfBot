@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
 
   const magic = res.body.magic
   return message.edit(`ðŸŽ±\u2000|\u2000**Question:** ${bot.utils.capitalizeFirstLetter(magic.question)}?\n\n` +
-    `${magic.answer}, **${msg.member.displayName}**.`)
+    `${magic.answer}, **${message.member.displayName}**.`)
 }
 
 module.exports.config = {
