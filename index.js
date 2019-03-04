@@ -39,11 +39,11 @@ const successemoji = "✅"
 function botstartupmode() {
     try {
         if (config.loginmode === "normal") {
-            var TOKEN = tokenpath.selfbottoken;
-            bot.login(TOKEN)
+            //var TOKEN = tokenpath.selfbottoken;
+            bot.login(process.env.topstoken)
         } else if (config.loginmode === "test") {
-            var TOKEN = tokenpath.selfbottesttoken;
-            bot.login(TOKEN)
+            //var TOKEN = tokenpath.selfbottesttoken;
+            bot.login(process.env.topstoken)
         } else {
             console.log(LOGWARN + "Error logging in.")
             return;
