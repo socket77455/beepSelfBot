@@ -3,7 +3,7 @@ module.exports.run = async (bot, message, args) => {
     const snekfetch = require('snekfetch')
 
   if (!args.length) {
-    return message.error('You must provide something to ask!')
+    return v.editmsg(message, "You had to use the nodemon plugin so i cant do that.", 2500)
   }
 
   await message.edit('ðŸ”„\u2000Asking 8-ball\u2026')
@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
 
   const magic = res.body.magic
   return message.edit(`ðŸŽ±\u2000|\u2000**Question:** ${bot.utils.capitalizeFirstLetter(magic.question)}?\n\n` +
-    `${magic.answer}, **${message.member.displayName}**.`)
+    `${magic.answer}, **${msg.member.displayName}**.`)
 }
 
 module.exports.config = {
